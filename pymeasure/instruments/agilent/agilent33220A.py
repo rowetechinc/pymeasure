@@ -106,7 +106,7 @@ class Agilent33220A(Instrument):
         """ A floating point property that controls the voltage amplitude of the
         output waveform in V, from 10e-3 V to 10 V. Can be set. """,
         validator=strict_range,
-        values=[-30, 30],
+        values=[-40, 40],
     )
 
     amplitude_unit = Instrument.control(
