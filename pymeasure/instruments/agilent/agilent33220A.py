@@ -101,6 +101,14 @@ class Agilent33220A(Instrument):
         values=[10e-3, 10],
     )
 
+    amplitude_dbm = Instrument.control(
+        "VOLT?", "VOLT %f DBM",
+        """ A floating point property that controls the voltage amplitude of the
+        output waveform in V, from 10e-3 V to 10 V. Can be set. """,
+        validator=strict_range,
+        values=[-30, 30],
+    )
+
     amplitude_unit = Instrument.control(
         "VOLT:UNIT?", "VOLT:UNIT %s",
         """ A string property that controls the units of the amplitude. Valid
